@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+/* Estilos generales */
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos el alto completo del viewport */
+    font-family: Arial, sans-serif;
+    background-color: #797474;
+}
+
+/* Alinear todos los elementos del header en una línea */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+/* Centrar el título "I see you" */
+.texto-header {
+    flex: 1;
+    text-align: center;
+}
+
+/* Alinear el cuadro de búsqueda a la derecha */
+.buscar-header {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+/* Ajustar el aside */
+main {
+    flex: 1; /* El contenido del main ocupará el espacio restante entre el header y el footer */
+    display: flex; /* Para permitir el ajuste del alto del aside */
+}
+
+.main-lateral {
+    background-color: #666; /* Color de fondo del aside */
+    width: 20%; /* Ancho del menú hamburguesa */
+    overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
+}
+
+
+/* Estilo de la imagen dentro del contenedor */
+.imagen-contenedor img {
+    width: 90%; /* Asegurar que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto; /* Mantener la proporción de aspecto de la imagen */
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.main-central {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px; /* Espacio entre las cajas */
+    
+}
+
+.caja {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    flex-basis: calc(50% - 20px); /* Ancho de la caja, con espacio entre ellas */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Ajustar el margen a la izquierda y derecha */
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%; /* Ancho completo */
+    background: #999;
+    z-index: 999; /* Asegura que el footer quede sobre el contenido al hacer scroll */
+}
+
+.redes-sociales a,
+.contacto a {
+    margin: 5px;
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.redes-sociales a:hover,
+.contacto a:hover {
+    color: #007bff;
+}
+
+.menu-header {
+    position: fixed;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    padding: 20px 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.menu-header.is-active {
+    background-color: none;
+}
+
+._layer {
+    background: #ffffff;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    width: 28px;
+    height: 3px;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.menu-header:hover .-top {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.menu-header:hover .-bottom {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.menu-header.is-active .-top {
+    -webkit-transform: translateY(200%) rotate(45deg) !important;
+    -ms-transform: translateY(200%) rotate(45deg) !important;
+    transform: translateY(200%) rotate(45deg) !important;
+}
+
+.menu-header.is-active .-mid {
+    opacity: 0;
+}
+
+.menu-header.is-active .-bottom {
+    -webkit-transform: translateY(-200%) rotate(135deg) !important;
+    -ms-transform: translateY(-200%) rotate(135deg) !important;
+    transform: translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active {
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.menuppal {
+    background-color: #333;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 20%;
+    z-index: 1001;
+}
+
+.menuppal ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menuppal ul li {
+    list-style: none;
+    text-align: center;
+    font-family: Verdadna, Arial, Helvetica;
+    color: nav-color-text;
+    font-size: 1.5rem;
+    line-height: 3em;
+    height: 3em;
+    color: #369;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.menuppal ul li a {
+    text-decoration: none;
+    color: #369;
+}
+
+.menuppal ul li a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-central-serie {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajuste de columnas para 8 cajas por fila */
+    gap: 20px; /* Espacio entre las cajas */
+    margin: 0 auto; /* Centrar el contenido en el centro horizontal */
+    margin:20px 20px 20px 20px;
+}
+
+.caja-serie {
+    background-color: #999;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Agregar transición de escala */
+}
+
+.caja-serie:hover {
+    transform: scale(1.05); /* Aumentar el tamaño en un 5% al pasar el mouse */
+}
+
+.caja-serie img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.caja-serie h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.caja-serie a {
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: #343e49; /* Cambia el color del enlace */
+    transition: color 0.3s ease-in-out; /* Agrega una transición suave al cambiar el color */
+}
+
+.caja-serie a:hover {
+    color: #0056b3; /* Cambia el color del enlace en hover */
+    text-decoration-line: underline;
+}
