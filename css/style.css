@@ -67,13 +67,14 @@ main {
 }
 
 .caja {
+    display: grid;
     background-color: #f8f8f8;
     border-radius: 10px;
     flex-basis: calc(50% - 20px); /* Ancho de la caja, con espacio entre ellas */
     padding: 20px;
     text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Ajustar el margen a la izquierda y derecha */
+    margin: 25%; /* Ajustar el margen a la izquierda y derecha */
 }
 .contenedor {
     width: 100%;
