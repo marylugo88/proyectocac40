@@ -43,10 +43,14 @@ main {
     display: flex; /* Para permitir el ajuste del alto del aside */
 }
 
-.main-lateral {
+aside {
     background-color: #666; /* Color de fondo del aside */
     width: 20%; /* Ancho del menú hamburguesa */
     overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
+}
+.anuncios {
+    text-align: center;
+    color: #EE9322;
 }
 
 
@@ -271,7 +275,7 @@ footer {
     color: #fff;
 }
 
-.main-central-serie {
+.main-central-serie, .main-central-pelis, .main-central-recital {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajuste de columnas para 8 cajas por fila */
@@ -280,7 +284,7 @@ footer {
     margin:20px 20px 20px 20px;
 }
 
-.caja-serie {
+.caja-serie, .caja-recital, .caja-pelis {
     background-color: #999;
     border-radius: 10px;
     padding: 20px;
@@ -289,29 +293,29 @@ footer {
     transition: transform 0.3s ease; /* Agregar transición de escala */
 }
 
-.caja-serie:hover {
+.caja-serie:hover, .caja-pelis:hover, .caja-recital:hover {
     transform: scale(1.05); /* Aumentar el tamaño en un 5% al pasar el mouse */
 }
 
-.caja-serie img {
+.caja-serie img, .caja-pelis img, .caja-recital img {
     border-radius: 10px;
     max-width: 100%;
     height: auto;
 }
 
-.caja-serie h2 {
+.caja-serie h2, .caja-pelis h2, .caja-recital h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1.2em;
 }
 
-.caja-serie a {
+.caja-serie a, .caja-pelis a, .caja-recital a {
     text-decoration: none; /* Elimina el subrayado predeterminado */
     color: #343e49; /* Cambia el color del enlace */
     transition: color 0.3s ease-in-out; /* Agrega una transición suave al cambiar el color */
 }
 
-.caja-serie a:hover {
+.caja-serie a:hover , .caja-pelis a:hover, .caja-recital a:hover {
     color: #0056b3; /* Cambia el color del enlace en hover */
     text-decoration-line: underline;
 }
