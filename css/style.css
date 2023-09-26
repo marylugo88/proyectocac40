@@ -37,6 +37,7 @@ header {
 /* Estilo de la imagen del logo */
 .texto-header img {
     width: 85px; /* Tamaño de la imagen */
+    display: flex;
 }
 
 .texto-header a:hover {
