@@ -341,15 +341,20 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
+.formulario input {
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
 .formulario-borde {
     border: 2px solid #EE9322;
     border-radius: 10px;
 }
 
 .formulario-caja {
-    background-color: #fafafa;
+    background-color: #22252a;
     border-radius: 10px;
-    border: 2px solid #EE9322;
+    border: 2px solid #fa5922;
     padding: 5%;
     text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -357,16 +362,17 @@ footer {
 }
 
 .formulario-caja h1 {
-    color: #EE9322; 
+    color: #f5793b; 
     font-weight: 900;
     font-size: 3em;
     letter-spacing: .4rem;
 }
 
 .formulario-caja label { 
-    color: #EE9322; 
+    color: #f5793b; 
     font-weight: bold;
     font-size: 1.5em;
     letter-spacing: .13rem;
 }
+
 
