@@ -16,17 +16,27 @@ body {
 /* Alinear todos los elementos del header en una línea */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrar horizontalmente */
     align-items: center;
-    background-color: #333;
+    background-color: #000000;
     color: white;
     position: relative;
+    padding: 5px 10px; /* Añadir espaciado para mejorar la apariencia */
+    height: 110px; /* Establecer la altura deseada */
 }
 
-/* Centrar el título "I see you" */
-.texto-header {
-    flex: 1;
-    text-align: center;
+/* Estilo del título "Q vemos hoy?" */
+.texto-header h1 {
+    font-size: 3em;
+    color: #fa5922;
+    display: flex; /* Mostrar el contenido en línea */
+    align-items: center; /* Centrar verticalmente */
+    gap: 25px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo de la imagen del logo */
+.texto-header img {
+    width: 85px; /* Tamaño de la imagen */
 }
 
 /* Alinear el cuadro de búsqueda a la derecha */
@@ -34,8 +44,14 @@ header {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    margin-left: auto;
+    position: absolute; /* Posición absoluta */
+    right: 5px; /* Posicionar en el borde derecho */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+    min-width: 200px; /* Ancho mínimo deseado */
+    width: auto; /* Permitir que el ancho se ajuste según el contenido */
 }
+
 
 /* Ajustar el aside */
 main {
