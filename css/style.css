@@ -39,6 +39,10 @@ header {
     width: 85px; /* Tamaño de la imagen */
 }
 
+.texto-header a:hover {
+    transform: scale(1.05);
+}
+
 /* Alinear el cuadro de búsqueda a la derecha */
 .buscar-header {
     padding: 10px;
