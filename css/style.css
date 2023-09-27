@@ -82,7 +82,7 @@ main {
 .main-central {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(1, 1fr); /* 2 columnas */
     gap: 20px; /* Espacio entre las cajas */
     
 }
@@ -381,3 +381,32 @@ footer {
 }
 
 
+/* Estilos para peliculas.html */
+.movies {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.movies li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    background: #272727;
+}
+.movies li img {
+    max-width: 300px;
+    border-radius: 12px;
+}
+.movies li h2 {
+    color: #fff;
+    font-size: 1.8em;
+    padding: 15px 10px 0;
+    margin-top: auto;
+    font-family: "Roboto", sans-serif;
+}
