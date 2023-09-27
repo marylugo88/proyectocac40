@@ -16,17 +16,32 @@ body {
 /* Alinear todos los elementos del header en una línea */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrar horizontalmente */
     align-items: center;
-    background-color: #333;
+    background-color: #000000;
     color: white;
     position: relative;
+    padding: 5px 10px; /* Añadir espaciado para mejorar la apariencia */
+    height: 110px; /* Establecer la altura deseada */
 }
 
-/* Centrar el título "I see you" */
-.texto-header {
-    flex: 1;
-    text-align: center;
+/* Estilo del título "Q vemos hoy?" */
+.texto-header h1 {
+    font-size: 3em;
+    color: #fa5922;
+    display: flex; /* Mostrar el contenido en línea */
+    align-items: center; /* Centrar verticalmente */
+    gap: 25px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo de la imagen del logo */
+.texto-header img {
+    width: 85px; /* Tamaño de la imagen */
+    display: flex;
+}
+
+.texto-header a:hover {
+    transform: scale(1.05);
 }
 
 /* Alinear el cuadro de búsqueda a la derecha */
@@ -34,8 +49,14 @@ header {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    margin-left: auto;
+    position: absolute; /* Posición absoluta */
+    right: 5px; /* Posicionar en el borde derecho */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+    min-width: 200px; /* Ancho mínimo deseado */
+    width: auto; /* Permitir que el ancho se ajuste según el contenido */
 }
+
 
 /* Ajustar el aside */
 main {
@@ -65,7 +86,7 @@ aside {
 .main-central {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(1, 1fr); /* 2 columnas */
     gap: 20px; /* Espacio entre las cajas */
     
 }
@@ -318,4 +339,79 @@ footer {
 .caja-serie a:hover , .caja-pelis a:hover, .caja-recital a:hover {
     color: #0056b3; /* Cambia el color del enlace en hover */
     text-decoration-line: underline;
+}
+
+
+
+/* Estilos para formularios */
+
+.formulario {
+    background-image: url("../img/fondo_formulario.png");
+    background-color: #cccccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario input {
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario-borde {
+    border: 2px solid #EE9322;
+    border-radius: 10px;
+}
+
+.formulario-caja {
+    background-color: #22252a;
+    border-radius: 10px;
+    border: 2px solid #fa5922;
+    padding: 5%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Agregar transición de escala */
+}
+
+.formulario-caja h1 {
+    color: #f5793b; 
+    font-weight: 900;
+    font-size: 3em;
+    letter-spacing: .4rem;
+}
+
+.formulario-caja label { 
+    color: #f5793b; 
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: .13rem;
+}
+
+
+/* Estilos para peliculas.html */
+.movies {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.movies li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    background: #272727;
+}
+.movies li img {
+    max-width: 300px;
+    border-radius: 12px;
+}
+.movies li h2 {
+    color: #fff;
+    font-size: 1.8em;
+    padding: 15px 10px 0;
+    margin-top: auto;
+    font-family: "Roboto", sans-serif;
 }
