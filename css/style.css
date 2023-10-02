@@ -444,3 +444,165 @@ footer {
     font-family: "Roboto", sans-serif;
 }
 
+/* Desmarco todas las cosas version mobile */
+.contenedor{
+    display: none;
+}
+.navMobile{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    main {
+        background-color: #000000;
+        display: inline;
+        color: white;
+    }
+    main hr {
+        border: 1px white solid;
+    }
+    main h2 {
+        margin-left: 5vw;
+    }
+    header{
+        height: 20vh;
+        padding: 0;
+    }
+    header .header{
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        width: 100%;
+        height: 100%;
+    }
+    .contenedor{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+        grid-auto-rows: minmax(200px, auto);
+        gap: 15px;
+        color: white;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+    .grid-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+
+        transition: transform 0,3s ease-in-out;
+        -webkit-transition: transform 0,3s ease-in-out;
+        -moz-transition: transform 0,3s ease-in-out;
+        -ms-transition: transform 0,3s ease-in-out;
+        -o-transition: transform 0,3s ease-in-out;
+}
+    .grid-item h2 {
+        margin-left: 0;
+        width: 80%;
+        word-wrap: break-word;
+    }
+    .contenedorImagen{
+        height: 80%;
+        width: 90%;
+    }
+    .contenedorImagen img{
+    width: 100%;
+    }
+    .grid-item:hover{
+        filter: opacity(0.9);
+        -webkit-filter: opacity(0.9);
+        transform: scale(1.04);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+}
+
+    .parte{
+        background-color: #0b78e6;
+        border: #c6cfd8 2px solid;
+    }
+    .texto-header h1 {
+        width: 100%;
+        color: #fa5922;
+        align-items: center; /* Centrar verticalmente */
+        gap: 5px; /* Espacio entre la imagen y el texto */
+    }
+    
+    /* Estilo de la imagen del logo */
+    .texto-header img {
+        height: 50%; /* Tamaño de la imagen */
+    }
+    .main-lateral{
+        display: none;
+    }
+    .buscar-header {
+    display: none;}
+    
+    .main-central{
+        display: inline;
+    }
+    .main-central .caja{
+        display: none;
+    }
+    .anuncios{
+        display: none;
+    }
+    .partes h2{
+        color: wheat;
+    }
+    .partes:hover{
+        color: black;
+    }
+
+    .main-lateral{
+        width: 0%;
+    }
+    .menuppal{
+        display: none;
+    }
+    ._layer{
+        display: none;
+        
+    }
+    .menu-header{
+        display: none;
+    }
+
+    .navMobile{
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: row nowrap;
+        background-color: rgb(0, 0, 0);
+        height: 8vh;
+        position: sticky;
+        bottom: 0;
+        z-index: 1000
+    }
+    .navMobile div {
+        display: flex;
+        background-color: #000000;
+        border: #201c1c 1px solid ;
+        width: 100%;
+    }
+    .navMobile a {
+        text-decoration: none;
+        color: #ffffff;
+        width: 100%;
+        font-size: 5vh;
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+    .menuMain{
+        text-decoration: none;
+        list-style: none;
+    }
+    footer {
+        position: relative;
+    }
+}
