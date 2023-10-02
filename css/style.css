@@ -114,14 +114,14 @@ main {
 }
 
 .contenedor {
-    width: 100%;
     padding: 15px;
+    padding-bottom: 5px;
 }
 
 .formulario-usuario {
-    background: #fff;
-    margin-top: 150px;
-    padding: 3px;
+    background: #000;
+    padding: 30px;
+    border: 2px solid #fa5922;
 }
 
 h3 {
@@ -132,9 +132,10 @@ h3 {
 
 input[type="text"], input[type="password"]{
     font-size: 20px;
-    width: 82%;
-    padding: 10px;
+    width: 91%;
+    padding: 8px;
     border: none;
+    background: #fff;
 }
 
 .input-contenedor {
@@ -143,28 +144,29 @@ input[type="text"], input[type="password"]{
 }
 
 .icon {
-    min-width: 50px;
+    min-width: 41px;
     text-align: center;
     color: #999;
 }
 
 .button{
-    border: none;
-    width: 100%;
+    margin: 10px 120px;
+    width: 50%;
     color: white;
     font-size: 20px;
     background: #EE9322;
-    padding: 15px 20px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .button:hover{
-    background: #FFFADD;
+    background: #e9d147;
 }
 
 p {
     text-align: center;
+    color: white;
 }
 
 .link {
@@ -174,15 +176,17 @@ p {
 }
 
 .link:hover{
-    color: #FFFADD;    
+    color: #e9d147;    
 }
 
-@media(min-width: 768px){
+@media(min-width: 375px){
     .formulario-usuario{
         margin: auto;
-        width: 500px;
-        margin-top: 150px;
         border-radius: 4%;
+        padding: 0%;
+    }
+    .formulario-caja {
+        margin: auto;
     }
 }
 footer {
@@ -369,11 +373,9 @@ footer {
 /* Estilos para formularios */
 
 .formulario {
-    background-image: url("../img/fondo_formulario.png");
+    background-image: url("../img/escuadron suicida.jpg");
     background-color: #cccccc;
     font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -393,41 +395,24 @@ footer {
     border: 2px solid #fa5922;
     padding: 2%;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    min-height: 100%;
-    margin-bottom: 50px; /* Añade un margen inferior para separar del footer */
+    width: 50%;
+    margin-bottom: 25px; /* Añade un margen inferior para separar del footer */
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Agregar transicion de escala*/
 }
-
-.formulario-caja form .form-control {
-    width: 100%;
-    height: 50px; /* Ajusta la altura según tus preferencias */
-}
-
-.formulario-caja form .form-text {
-    width: 100%;
-    /* Elimina la altura fija para que se ajuste automáticamente al contenido */
-}
-
 .formulario-caja h1 {
     color: #f5793b; 
     font-weight: 900;
-    font-size: 3em;
+    font-size: 2em;
     letter-spacing: .4rem;
 }
 
 .formulario-caja label { 
     color: #f5793b; 
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
     letter-spacing: .13rem;
-    margin-top: 15px;
 }
-
-.btn {
-    margin: 10px;
-    margin-top: 30px;
-} 
 
 /* Estilos para peliculas.html */
 .movies {
