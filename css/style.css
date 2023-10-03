@@ -123,6 +123,9 @@ main {
     padding: 30px;
     border: 2px solid #fa5922;
 }
+.input-contenedor input{
+    width: 91%;
+}
 
 h3 {
     text-align: center;
@@ -131,8 +134,8 @@ h3 {
 }
 
 input[type="text"], input[type="password"]{
-    font-size: 20px;
-    width: 91%;
+    font-size: 15px;
+    /*width: 100%;*/
     padding: 8px;
     border: none;
     background: #fff;
@@ -376,12 +379,7 @@ footer {
     background-image: url("../img/escuadron suicida.jpg");
     background-color: #cccccc;
     font-family: 'Roboto', sans-serif;
-}
-
-
-.formulario input {
-    max-width: 100%;
-    font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 .formulario-borde {
@@ -445,9 +443,6 @@ footer {
 }
 
 /* Desmarco todas las cosas version mobile */
-.contenedor{
-    display: none;
-}
 .navMobile{
     display: none;
 }
@@ -473,15 +468,6 @@ footer {
         align-items: end;
         width: 100%;
         height: 100%;
-    }
-    .contenedor{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-        grid-auto-rows: minmax(200px, auto);
-        gap: 15px;
-        color: white;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
     }
     .grid-item{
         display: flex;
