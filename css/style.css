@@ -390,7 +390,7 @@ footer {
     font-weight: bold;
     background: #EE9322;
     padding: 10px;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     cursor: pointer;
 }
 
