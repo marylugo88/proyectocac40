@@ -382,9 +382,20 @@ footer {
     width: 100%;
 }
 
-.formulario-borde {
-    border: 2px solid #EE9322;
-    border-radius: 10px;
+.formulario button{
+    margin: 25px;
+    width: 30%;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    background: #EE9322;
+    padding: 10px;
+    /* border-radius: 10px; */
+    cursor: pointer;
+}
+
+.formulario button:hover{
+    background: #fa5922;
 }
 
 .formulario-caja {
@@ -405,10 +416,11 @@ footer {
     letter-spacing: .4rem;
 }
 
-.formulario-caja label { 
+.formulario-caja label {
+    margin: 10px; 
     color: #f5793b; 
     font-weight: bold;
-    font-size: 1em;
+    font-size: 2em;
     letter-spacing: .13rem;
 }
 
