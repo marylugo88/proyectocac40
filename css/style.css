@@ -182,11 +182,12 @@ input[type="text"], input[type="password"]{
 p {
     text-align: center;
     color: white;
+    font-size: 15px;
 }
 
 .link {
     text-decoration: none;
-    color: #EE9322;
+    color: #f1911a;
     font-weight: 600;   
 }
 
