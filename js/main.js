@@ -25,15 +25,53 @@
     `
     
     document.getElementById("footer").innerHTML = `
-    <div class="redes-sociales">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer class="footer">
+
+    <div class="container-footer">
+    
+    <div class="footer-img-link">
+        <div class="footer-link">
+            <div class="logo">
+                <img src="img/logo.svg" alt="Logo">
+            </div>
+        </div>
+        <div class="footer-link">
+            <h3>Principal</h3>
+            <ul>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">Peliculas</a></li>
+                <li><a href="#">Recitales</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Prueba de velocidad</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-link">
+            <h3>Siguenos</h3>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
+            </div>
+            <h3><a href="contacto.html">Contacto</a></h3>
+
+        </div>
+
     </div>
-    <div class="contacto">
-    <a href="#"><i class="fas fa-envelope"></i> Correo Electrónico</a>
-    <a href="#"><i class="fas fa-phone"></i> Teléfono</a>
+
+    <hr>
+    <div class="footer-text">
+        <p>Politica de privacidad</p>
+        <p>©Todos los derechos reservados</p>
+
     </div>
+
+    </div>
+
+    </footer>
     `
 
     // selector
