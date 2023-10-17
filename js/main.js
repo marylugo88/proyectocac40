@@ -1,3 +1,4 @@
+
 /*Carrusel*/
 const fila = document.querySelector('.contenedor-carousel');
 const peliculas = document.querySelectorAll('.pelicula');
@@ -61,6 +62,7 @@ fila.addEventListener('mouseleave', () => {
 }); /*Carrusel*/ 
 
 // selector
+
     var menu = document.querySelector('.menu-header');
     
     // method
@@ -81,5 +83,3 @@ fila.addEventListener('mouseleave', () => {
             return false;
         });
     });*/
-
-
