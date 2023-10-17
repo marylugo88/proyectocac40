@@ -62,19 +62,19 @@ header {
 /* Ajustar el aside */
 main {
     flex: 1; /* El contenido del main ocupará el espacio restante entre el header y el footer */
-    display: flex; /* Para permitir el ajuste del alto del aside */
+    display: flexbox; /* Para permitir el ajuste del alto del aside */
+    background: center;
 }
 
 aside {
     background-color: #666; /* Color de fondo del aside */
-    width: 20%; /* Ancho del menú hamburguesa */
+    width: 10%; /* Ancho del menú hamburguesa */
     overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
 }
 .anuncios {
     text-align: center;
     color: #EE9322;
 }
-
 /*Banner Saw X*/
 .pelicula-principal {
 	font-size: 16px;
@@ -249,7 +249,8 @@ aside {
 
 /* Estilo de la imagen dentro del contenedor */
 .imagen-contenedor img {
-    width: 90%; /* Asegurar que la imagen ocupe el 100% del ancho del contenedor */
+    justify-content: center;
+    width: 50%; /* Asegurar que la imagen ocupe el 100% del ancho del contenedor */
     height: auto; /* Mantener la proporción de aspecto de la imagen */
     margin: 10px;
     border-radius: 10px;
@@ -359,7 +360,7 @@ footer {
 }
 
 .menu-header {
-    position: fixed;
+    position: absolute;/*Cambie de Fixed a Absolute, por que el menu se movia por todo el body*/
     background-color: transparent;
     left: 0;
     top: 0;
@@ -375,7 +376,7 @@ footer {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
 }
 
 .menu-header.is-active {
