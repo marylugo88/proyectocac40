@@ -18,71 +18,54 @@
 
     <title>Q vemos hoy?</title>
 </head>
-
 <body>
     <header>
-        <div class="texto-header">
-            <h1><a href="index.html"><img src="img/logo_black.png" alt="logo"></a> vemos hoy?</h1>
-        </div>
-        <div class="buscar-header">
-            <input type="text" class="buscar-header" name="searchInput" placeholder="Buscar...">
-        </div>
-        
-        </p>
-        <div class="menu-header">
-            <div class="_layer -top"></div>
-            <div class="_layer -mid"></div>
-            <div class="_layer -bottom"></div>
-        </div>
-        
-        <nav class="menuppal">
-            <ul>
-                <li><a href="login.html">iniciar Sesion</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="peliculas.html">Películas</a></li>
-                <li><a href="series.html">Series</a></li>
-                <li><a href="recitales.html">Recitales</a></li>
-            </ul>
-        </nav>
+        <div id="header"></div>
     </header>
 
-    <main>
-                    <form class="formulario-usuario">
-                        <h3> Registrate </h3>
-                        <div class="contenedor">
-                            <div class="input-contenedor">
-                                <i class="fas fa-user icon"></i>
-                                <input type="text" placeholder="Nombre completo">
-                            </div>
-                             <div class="input-contenedor">
-                                <i class="fas fa-envelope icon"></i>
-                                <input type="text" placeholder="Correo electronico">
-                            </div>
-                             <div class="input-contenedor">
-                                <i class="fas fa-key icon"></i>
-                                <input type="password" placeholder="Contraseña">
-                            </div>
-                            <input type="submit" value="Registrate" class="button">
-                            <p>Al registrarte, aceptas nuestras Condiciones de uso y Politicas de privacidad.</p>
-                            <p>¿Ya tienes una cuenta?<a class="link" href="login.html">Iniciar Sesion</a></p>
-                        </div>
-                
-                    </form>
-            </section>
+    <main class="formulario">
+            <form  class="formulario-usuario">
+                <h3> Registrate </h3>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" placeholder="Nombre completo">
+                    </div>
+                    <div class="input-contenedor">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="text" placeholder="Correo electronico">
+                    </div>
+                    <div class="input-contenedor">
+                        <i class="fas fa-key icon"></i>
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                </div>
+                <input type="submit" value="Registrate" class="button">
+                        <p>Al registrarte, aceptas nuestras Condiciones de uso y Politicas de privacidad.</p>
+                        <p>¿Ya tienes una cuenta?<a class="link" href="login.html">Iniciar Sesion</a></p>
+            </form>
     </main>
 
     <footer>
-        <div class="redes-sociales">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="contacto">
-            <a href="#"><i class="fas fa-envelope"></i> Correo Electrónico</a>
-            <a href="#"><i class="fas fa-phone"></i> Teléfono</a>
-        </div>
+        <div id="footer"></div>
     </footer>
-
+    <nav class="navMobile">
+        <div>
+            <a href="index.html"><i class="fa-solid fa-house-chimney fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href=""><i class="fa-solid fa-magnifying-glass fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="peliculas.html"><i class="fa-solid fa-ticket fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="series.html"><i class="fa-solid fa-clapperboard fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="usuario.html"><i class="fa-solid fa-user fa-2xs"></i></a>
+        </div>
+    </nav>
     <script src="js/main.js"></script>
 </body>
 
