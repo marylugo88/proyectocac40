@@ -73,13 +73,14 @@ aside img{
 /* Ajustar el aside */
 main {
     flex: 1; /* El contenido del main ocupará el espacio restante entre el header y el footer */
-    display: flex; /* Para permitir el ajuste del alto del aside */
-
+    display: flexbox; /* Para permitir el ajuste del alto del aside */
+    background: center;
 }
 
-.main-lateral {
-    background-color: #22252a; /* Color de fondo del aside */
-    width: 16%; /* Ancho del menú hamburguesa */
+aside {
+    background-color: #666; /* Color de fondo del aside */
+    width: 10%; /* Ancho del menú hamburguesa */
+
     overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
 }
 
@@ -93,15 +94,182 @@ main {
     font-family: 'Roboto', sans-serif;
     color: #EE9322;
 }
+/*Banner Saw X*/
+.pelicula-principal {
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/sawx.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: end;
+}
 
-.main-lateral a:hover {
-    font-family: 'Roboto', sans-serif;
-    color: #f5793b;
+.pelicula-principal .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+    
+}
+
+.pelicula-principal .boton:hover {
+	background: #fff;
+	color: #000;
+}
+
+.pelicula-principal .boton i {
+	margin-right: 1.25em;
+}
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 { /* pelicula recomendada*/
+	color: #fff;
+	font-size: 20px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-recomendadas {
+	margin-bottom: 70px;
+}
+
+.peliculas-recomendadas .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .1s ease all;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-recomendadas .contenedor-carousel {
+	width: 100%;
+	padding: 30px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel {
+	display:flex;
+	flex-wrap: nowrap;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+
+    min-width: 20%; /*tamaño de imagenes*/
+	transition: .1s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+    
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+    width: 99%; /*separacion entre imagenes*/
+	vertical-align: top;
+}
+
+/* ---- ----- ----- Media Queries Saw X ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
 }
 
 /* Estilo de la imagen dentro del contenedor */
 .imagen-contenedor img {
-    width: 90%; /* Asegurar que la imagen ocupe el 100% del ancho del contenedor */
+    justify-content: center;
+    width: 50%; /* Asegurar que la imagen ocupe el 100% del ancho del contenedor */
     height: auto; /* Mantener la proporción de aspecto de la imagen */
     margin: 10px;
     border-radius: 10px;
@@ -221,7 +389,7 @@ p {
 }
 
 .menu-header {
-    position: fixed;
+    position: absolute;/*Cambie de Fixed a Absolute, por que el menu se movia por todo el body*/
     background-color: transparent;
     left: 0;
     top: 0;
@@ -237,7 +405,7 @@ p {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
 }
 
 .menu-header.is-active {
