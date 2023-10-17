@@ -57,18 +57,30 @@ header {
     min-width: 200px; /* Ancho mínimo deseado */
     width: auto; /* Permitir que el ancho se ajuste según el contenido */
 }
-
+aside {
+    background-color: transparent; /* Color de fondo del aside */
+    width: 20%; /* Ancho del menú hamburguesa */
+    overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
+    font-size: 30px;
+}
+aside img{
+    margin: 10px;
+}
+.anuncios {
+    text-align: center;
+    color: #f38f16;
+}
 /* Ajustar el aside */
 main {
     flex: 1; /* El contenido del main ocupará el espacio restante entre el header y el footer */
     display: flex; /* Para permitir el ajuste del alto del aside */
+
 }
 
 .main-lateral {
     background-color: #22252a; /* Color de fondo del aside */
     width: 16%; /* Ancho del menú hamburguesa */
     overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
-    
 }
 
 .main-lateral p {
@@ -170,11 +182,12 @@ input[type="text"], input[type="password"]{
 p {
     text-align: center;
     color: white;
+    font-size: 15px;
 }
 
 .link {
     text-decoration: none;
-    color: #EE9322;
+    color: #f1911a;
     font-weight: 600;   
 }
 
@@ -642,7 +655,11 @@ p {
 
 .footer-link a:hover {
     color: #fa5922;
-}
+  
+@media (min-width: 768px){
+    .navbarMobile{
+        display: none;
+    }
 
 .footer .socials {
     display: flex;
@@ -671,10 +688,6 @@ p {
     display: flex;
     flex-direction: column;
 }
-
-
-
-
 
 .footer hr {
     border: 1px solid #5f5f6e;
@@ -719,5 +732,4 @@ p {
     .footer-text {
         text-align: center;
     }
-
 }
