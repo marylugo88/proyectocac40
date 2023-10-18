@@ -1,3 +1,4 @@
+
 document.getElementById("header").innerHTML = `        
 <div class="texto-header">
 <h1><a href="index.html"><img src="img/logo.svg" alt="logo"></a> vemos hoy?</h1>
@@ -46,7 +47,17 @@ document.getElementById("footer").innerHTML = `
 
         </ul>
 
-    </div>
+// ? ----- ----- Hover ----- -----
+peliculas.forEach((pelicula) => {
+	pelicula.addEventListener('mouseenter', (e) => {
+		const elemento = e.currentTarget;
+		setTimeout(() => {
+			peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+			elemento.classList.add('hover');
+		}, 300);
+	});
+});
+
 
     <div class="footer-link">
         <h3>Siguenos</h3>
@@ -157,5 +168,4 @@ pelicula.addEventListener('mouseenter', (e) => {
 fila.addEventListener('mouseleave', () => {
 peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 }); /*Carrusel*/ 
-
 
