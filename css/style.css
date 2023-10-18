@@ -57,31 +57,20 @@ header {
     min-width: 200px; /* Ancho mínimo deseado */
     width: auto; /* Permitir que el ancho se ajuste según el contenido */
 }
-aside {
-    background-color: transparent; /* Color de fondo del aside */
-    width: 20%; /* Ancho del menú hamburguesa */
-    overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
-    font-size: 30px;
-}
-aside img{
-    margin: 10px;
-}
-.anuncios {
-    text-align: center;
-    color: #f38f16;
-}
+
+
 /* Ajustar el aside */
 main {
     flex: 1; /* El contenido del main ocupará el espacio restante entre el header y el footer */
-    display: flexbox; /* Para permitir el ajuste del alto del aside */
+    display: flex; /* Para permitir el ajuste del alto del aside */
     background: center;
 }
 
-aside {
-    background-color: #666; /* Color de fondo del aside */
-    width: 10%; /* Ancho del menú hamburguesa */
-
+.main-lateral {
+    background-color: red; /* Color de fondo del aside */
+    width: 20%; /* Ancho del menú hamburguesa */
     overflow-y: auto; /* Añadir scroll si el contenido es más grande que el alto */
+    font-size: 30px;
 }
 
 .main-lateral p {
@@ -266,6 +255,10 @@ aside {
 	}
 }
 
+.main-lateral img{
+    margin: 10px;
+}
+
 /* Estilo de la imagen dentro del contenedor */
 .imagen-contenedor img {
     justify-content: center;
@@ -275,6 +268,12 @@ aside {
     border-radius: 10px;
 }
 
+.anuncios {
+    text-align: center;
+    color: #f38f16;
+}
+
+
 .main-central {
     width: 80%;
     display: grid;
@@ -282,6 +281,159 @@ aside {
     gap: 20px; /* Espacio entre las cajas */
     
 }
+
+/*Banner Saw X*/
+.pelicula-principal {
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/sawx.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: end;
+}
+
+.pelicula-principal .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+    
+}
+
+.pelicula-principal .boton:hover {
+	background: #fff;
+	color: #000;
+}
+
+.pelicula-principal .boton i {
+	margin-right: 1.25em;
+}
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 { /* pelicula recomendada*/
+	color: #fff;
+	font-size: 20px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-recomendadas {
+	margin-bottom: 70px;
+}
+
+.peliculas-recomendadas .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .1s ease all;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-recomendadas .contenedor-carousel {
+	width: 100%;
+	padding: 30px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel {
+	display:flex;
+	flex-wrap: nowrap;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+
+    min-width: 20%; /*tamaño de imagenes*/
+	transition: .1s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+    
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+    width: 99%; /*separacion entre imagenes*/
+	vertical-align: top;
+}
+
 
 .caja {
     background-color: #f8f8f8;
@@ -355,7 +507,7 @@ p {
 
 .link {
     text-decoration: none;
-    color: #f1911a;
+    color: #EE9322;
     font-weight: 600;   
 }
 
@@ -363,16 +515,7 @@ p {
     color: #e9d147;    
 }
 
-@media(min-width: 375px){
-    .formulario-usuario{
-        margin: auto;
-        border-radius: 4%;
-        padding: 0%;
-    }
-    .formulario-caja {
-        margin: auto;
-    }
-}
+
 
 
 .redes-sociales a,
@@ -478,8 +621,7 @@ p {
 .menuppal ul li {
     list-style: none;
     text-align: center;
-    font-family: Verdadna, Arial, Helvetica;
-    color: nav-color-text;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     line-height: 3em;
     height: 3em;
@@ -527,7 +669,7 @@ p {
 }
 
 .caja-serie h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -626,10 +768,138 @@ p {
     font-family: "Roboto", sans-serif;
 }
 
+
+
+
+/* Estilos para el footer */
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer {
+    padding: 20px 0 10px 0;
+    background-color: #000000;
+
+}
+
+.footer-img-link {
+    display: flex;
+    margin-left: 10px;
+    
+}
+
+.footer-link {
+    width: 300px;
+}
+
+.footer-link h3 {
+    font-size: 1.5em;
+    color: #d6d6e2;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+.footer-link a {
+    font-size: 1em;
+    color: #b7b8be;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+.footer-link a:hover {
+    color: #fa5922;
+}
+
+.footer .socials {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.footer .socials a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: #fa5922;
+    margin: 0 15px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer .socials a:hover {
+    background-color: #ffffff;
+    color: #fa5922;
+}
+
+.footer form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer hr {
+    border: 1px solid #5f5f6e;
+    margin: 35px 0;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-text p {
+    font-size: 1em;
+    color: #b7b8be;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.footer-link .logo img {
+    max-width: 50px;
+    flex-direction: column;
+        align-items: center;
+        margin: 0 15px 10px 0;
+        } 
+
 /* Desmarco todas las cosas version mobile */
 .navMobile{
     display: none;
 }
+
+@media(max-width:991px) {
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-img-link {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .socials {
+        justify-content: center;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+}
+
 @media screen and (max-width: 768px){
     main {
         background-color: #000000;
@@ -775,129 +1045,35 @@ p {
 
 }
 
+/* ---- ----- ----- Media Queries Saw X ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
 
-/* Estilos para el footer */
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
 
-.container-footer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-}
+	.pelicula-principal {
+		font-size: 14px;
+	}
 
-.footer {
-    padding: 20px 0 10px 0;
-    background-color: #000000;
-
-}
-
-.footer-img-link {
-    display: flex;
-    margin-left: 10px;
-    
-}
-
-.footer-link {
-    width: 300px;
-}
-
-.footer-link h3 {
-    font-size: 1.5em;
-    color: #d6d6e2;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-align: left;
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
 }
 
 
-.footer-link a {
-    font-size: 1em;
-    color: #b7b8be;
-    display: block;
-    margin-bottom: 10px;
-}
-
-
-
-.footer-link a:hover {
-    color: #fa5922;
-  
-@media (min-width: 768px){
-    .navbarMobile{
-        display: none;
+@media(min-width: 375px){
+    .formulario-usuario{
+        margin: auto;
+        border-radius: 4%;
+        padding: 0%;
     }
-
-.footer .socials {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.footer .socials a {
-    display: inline-block;
-    min-height: 40px;
-    width: 40px;
-    background-color: #fa5922;
-    margin: 0 15px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #ffffff;
-    font-size: 20px;
-}
-
-.footer .socials a:hover {
-    background-color: #ffffff;
-    color: #fa5922;
-}
-
-.footer form {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer hr {
-    border: 1px solid #5f5f6e;
-    margin: 35px 0;
-}
-
-.footer-text {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-text p {
-    font-size: 1em;
-    color: #b7b8be;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.footer-link .logo img {
-    max-width: 50px;
-    flex-direction: column;
-        align-items: center;
-        margin: 0 15px 10px 0;
-        } 
-
-@media(max-width:991px) {
-
-    .footer {
-        padding: 30px;
-    }
-
-    .footer-img-link {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer .socials {
-        justify-content: center;
-    }
-
-    .footer-text {
-        text-align: center;
+    .formulario-caja {
+        margin: auto;
     }
 }
