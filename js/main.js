@@ -72,16 +72,6 @@ document.getElementById("footer").innerHTML = `
 
 </footer>
 `
-// ? ----- ----- Hover ----- -----
-peliculas.forEach((pelicula) => {
-	pelicula.addEventListener('mouseenter', (e) => {
-		const elemento = e.currentTarget;
-		setTimeout(() => {
-			peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
-			elemento.classList.add('hover');
-		}, 300);
-	});
-});
 // selector
 var menu = document.querySelector('.menu-header');
 
