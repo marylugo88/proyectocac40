@@ -46,6 +46,7 @@ document.getElementById("footer").innerHTML = `
             <li><a href="#">Prueba de velocidad</a></li>
 
         </ul>
+    </div>
 
     <div class="footer-link">
         <h3>Siguenos</h3>
