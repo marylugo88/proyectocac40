@@ -366,7 +366,7 @@ p {
 }
 
 .menu-header {
-    position: absolute;/*Cambie de Fixed a Absolute, por que el menu se movia por todo el body*/
+    position: fixed;/*Cambie de Fixed a Absolute, por que el menu se movia por todo el body*/
     background-color: transparent;
     left: 0;
     top: 0;
