@@ -47,18 +47,6 @@ document.getElementById("footer").innerHTML = `
 
         </ul>
 
-// ? ----- ----- Hover ----- -----
-peliculas.forEach((pelicula) => {
-	pelicula.addEventListener('mouseenter', (e) => {
-		const elemento = e.currentTarget;
-		setTimeout(() => {
-			peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
-			elemento.classList.add('hover');
-		}, 300);
-	});
-});
-
-
     <div class="footer-link">
         <h3>Siguenos</h3>
         <div class="socials">
@@ -84,7 +72,16 @@ peliculas.forEach((pelicula) => {
 
 </footer>
 `
-
+// ? ----- ----- Hover ----- -----
+peliculas.forEach((pelicula) => {
+	pelicula.addEventListener('mouseenter', (e) => {
+		const elemento = e.currentTarget;
+		setTimeout(() => {
+			peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+			elemento.classList.add('hover');
+		}, 300);
+	});
+});
 // selector
 var menu = document.querySelector('.menu-header');
 
