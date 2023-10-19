@@ -25,37 +25,47 @@
     </header>
 
     <main class="formulario">
-        <div class="formulario-caja">
-            <h1 class="mb-4">Formulario de Contacto</h1>
-            <form action="https://formspree.io/f/mdorpkwd" method="POST">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="Nombre" required minlength="4" maxlength="40">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="Email" required minlength="4" maxlength="40">
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea class="form-control form-text" id="mensaje" name="mensaje" required minlength="5" maxlength="200" placeholder="Esperamos tus comentarios, están permitidos 200 caracteres."></textarea>
-                </div>
-                
-                <button type="submit" class="button" id="enviarCorreo">Enviar</button>
-            </form>
-            
-            <a href="index.html"><button type="submit" class="button">Volver</button></a>
-        </div>  
-    </main>
-  
-    <footer>
-        <div id="footer"></div>
-    </footer>
+    <form  class="formulario-usuario" action="https://formspree.io/f/mdorpkwd" method="POST">
+        <h3> Formulario de Contacto </h3>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>                
+                <input type="text" class="form-control" id="nombre" name="Nombre" required minlength="4" maxlength="40" placeholder="Nombre completo">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" class="form-control" id="email" name="Email" required minlength="4" maxlength="40" placeholder="Correo electrónico">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-comment icon"></i>
+                <textarea class="form-control form-text" id="mensaje" name="mensaje" required minlength="5" maxlength="200" placeholder="Esperamos tus comentarios, están permitidos 200 caracteres." placeholder="Comentario"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="button" id="enviarCorreo">Enviar</button>
+    </form>
+</main>
 
-    <script src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<footer>
+<div id="footer"></div>
+</footer>
+<nav class="navMobile">
+<div>
+    <a href="index.html"><i class="fa-solid fa-house-chimney fa-2xs"></i></a>
+</div>
+<div>
+    <a href=""><i class="fa-solid fa-magnifying-glass fa-2xs"></i></a>
+</div>
+<div>
+    <a href="peliculas.html"><i class="fa-solid fa-ticket fa-2xs"></i></a>
+</div>
+<div>
+    <a href="series.html"><i class="fa-solid fa-clapperboard fa-2xs"></i></a>
+</div>
+<div>
+    <a href="usuario.html"><i class="fa-solid fa-user fa-2xs"></i></a>
+</div>
+</nav>
+<script src="js/main.js"></script>
 </body>
 
 </html>
