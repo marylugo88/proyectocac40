@@ -19,7 +19,6 @@ document.getElementById("header").innerHTML = `
     <li><a href="usuario.html">Usuario</a></li>
     <li><a href="peliculas.html">Películas</a></li>
     <li><a href="series.html">Series</a></li>
-    <li><a href="recitales.html">Recitales</a></li>
 </ul>
 </nav>
 </div>
@@ -41,7 +40,6 @@ document.getElementById("footer").innerHTML = `
         <ul>
             <li><a href="#">Series</a></li>
             <li><a href="#">Peliculas</a></li>
-            <li><a href="#">Recitales</a></li>
             <li><a href="#">Ayuda</a></li>
             <li><a href="#">Prueba de velocidad</a></li>
 
