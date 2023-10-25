@@ -1,4 +1,4 @@
-fetch("https://imdb8.p.rapidapi.com/auto-complete?q=Avengers", {
+fetch("https://imdb8.p.rapidapi.com/auto-complete?q=LOTR", {
 "method": "GET",
 "headers": {
 	'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',

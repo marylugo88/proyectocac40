@@ -18,7 +18,7 @@ document.getElementById("header").innerHTML = `
     <li><a href="usuario.html">Usuario</a></li>
     <li><a href="peliculas.html">Películas</a></li>
     <li><a href="series.html">Series</a></li>
-    <li><a href="recitales.html">Recitales</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
 </ul>
 </nav>
 </div>
@@ -38,23 +38,22 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-link">
         <h3>Principal</h3>
         <ul>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">Peliculas</a></li>
-            <li><a href="#">Recitales</a></li>
-            <li><a href="#">Ayuda</a></li>
-            <li><a href="#">Prueba de velocidad</a></li>
-
+            <li><a href="series.html">Series</a></li>
+            <li><a href="peliculas.html">Peliculas</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://fast.com/es/" target="_blank">Prueba de velocidad</a></li>
         </ul>
 
     </div>
 
     <div class="footer-link">
         <h3>Siguenos</h3>
-        <div class="socials">
+        <div class="socials">      
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
+            <a href="https://github.com/marylugo88/proyectocac40" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.python.org/ "target="_blank"><i class="fab fa-python"></i></a>
         </div>
         <h3><a href="contacto.html">Contacto</a></h3>
 

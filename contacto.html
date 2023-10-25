@@ -26,23 +26,36 @@
 
     <main class="formulario">
     <form  class="formulario-usuario" action="https://formspree.io/f/mdorpkwd" method="POST">
+        <div></div>
         <h3> Formulario de Contacto </h3>
-        <div class="contenedor">
+        <div class="contenedor-formularios">
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>                
-                <input type="text" class="form-control" id="nombre" name="Nombre" required minlength="4" maxlength="40" placeholder="Nombre completo">
+                <input type="text"  id="nombre" name="Nombre" required minlength="4" maxlength="40" placeholder="Nombre completo">
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input type="text" class="form-control" id="email" name="Email" required minlength="4" maxlength="40" placeholder="Correo electrónico">
+                <input type="text"  id="email" name="Email" required minlength="4" maxlength="40" placeholder="Correo electrónico">
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-comment icon"></i>
-                <textarea class="form-control form-text" id="mensaje" name="mensaje" required minlength="5" maxlength="200" placeholder="Esperamos tus comentarios, están permitidos 200 caracteres." placeholder="Comentario"></textarea>
+                <textarea class="form-text" id="mensaje" name="mensaje" required minlength="5" maxlength="200" placeholder="Esperamos tus comentarios, están permitidos 200 caracteres." placeholder="Comentario"></textarea>
             </div>
         </div>
-        <button type="submit" class="button" id="enviarCorreo">Enviar</button>
+        <div class="button-formularios">
+            <input type="submit"  id="enviarCorreo" value="Enviar" >
+            <br>
+            <br>
+        </div>
     </form>
+    
+
+
+
+
+
+
+
 </main>
 
 <footer>
@@ -53,7 +66,7 @@
     <a href="index.html"><i class="fa-solid fa-house-chimney fa-2xs"></i></a>
 </div>
 <div>
-    <a href=""><i class="fa-solid fa-magnifying-glass fa-2xs"></i></a>
+    <a href="#"><i class="fa-solid fa-magnifying-glass fa-2xs"></i></a>
 </div>
 <div>
     <a href="peliculas.html"><i class="fa-solid fa-ticket fa-2xs"></i></a>
