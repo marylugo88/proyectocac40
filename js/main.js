@@ -19,7 +19,6 @@ document.getElementById("header").innerHTML = `
     <li><a href="usuario.html">Usuario</a></li>
     <li><a href="peliculas.html">Películas</a></li>
     <li><a href="series.html">Series</a></li>
-    <li><a href="recitales.html">Recitales</a></li>
 </ul>
 </nav>
 </div>
@@ -41,11 +40,11 @@ document.getElementById("footer").innerHTML = `
         <ul>
             <li><a href="#">Series</a></li>
             <li><a href="#">Peliculas</a></li>
-            <li><a href="#">Recitales</a></li>
             <li><a href="#">Ayuda</a></li>
             <li><a href="#">Prueba de velocidad</a></li>
 
         </ul>
+    </div>
 
     <div class="footer-link">
         <h3>Siguenos</h3>
@@ -72,16 +71,6 @@ document.getElementById("footer").innerHTML = `
 
 </footer>
 `
-// ? ----- ----- Hover ----- -----
-peliculas.forEach((pelicula) => {
-	pelicula.addEventListener('mouseenter', (e) => {
-		const elemento = e.currentTarget;
-		setTimeout(() => {
-			peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
-			elemento.classList.add('hover');
-		}, 300);
-	});
-});
 // selector
 var menu = document.querySelector('.menu-header');
 

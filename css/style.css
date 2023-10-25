@@ -694,26 +694,10 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.main-lateral a:hover {
+    font-family: 'Roboto', sans-serif;
+    color: #f5793b;
+}
 
 
 
