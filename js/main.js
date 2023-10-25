@@ -50,7 +50,7 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-link">
         <h3>Siguenos</h3>
         <div class="socials">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61551870476388"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
@@ -166,3 +166,51 @@ fila.addEventListener('mouseleave', () => {
 peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 }); /*Carrusel*/ 
 
+// validacion del formulario
+
+const formulariou = document.getElementById('formulario-usuario');
+const inputs = document.querySelectorAll('#formulario-usuario input');
+
+const expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    nombre: /^[a-zA-ZÀ-\s]{1,40}$/,
+    password: /^.{4,12}$/,
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$/,
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre');
+        break;
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo');
+        break;
+        case "password":
+            validarCampo(expresiones.password, e.target, 'password');
+        break;
+    }
+}
+
+const validarCampo(expresion, input, campo) => {
+            if(expresion.test(input.value)){
+                document.getElementById(´grupo__${campo}´).classList.remove('formulario__grupo-incorrecto');
+                document.getElementById(´grupo__${campo}´).classList.add('formulario__grupo-correcto');
+                document.querySelector(´grupo__${campo} i´).classList.add('fa-check-circle');
+                document.querySelector(´grupo__${campo} i´).classList.remove('fa-times-circle');
+            } else {
+                
+                document.getElementById(´grupo__${campo}´).classList.remove('formulario__grupo-incorrecto');
+                document.getElementById(´grupo__${campo}´).classList.add('formulario__grupo-correcto');
+                document.querySelector(´grupo__${campo} i´).classList.add('fa-check-circle');
+                document.querySelector(´grupo__${campo} i´).classList.remove('fa-times-circle');
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarformulario);
+});
+
+formulariou.addEventListener('submit', (e) =>{
+    e.preventDefault();
+});
