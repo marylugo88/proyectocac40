@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 fetch("https://imdb8.p.rapidapi.com/auto-complete?q=LOTR", {
+=======
+fetch("https://imdb8.p.rapidapi.com/auto-complete?q=LORT", {
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
 "method": "GET",
 "headers": {
 	'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',

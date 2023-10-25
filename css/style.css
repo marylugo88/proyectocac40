@@ -25,7 +25,11 @@ header {
     background-color: #171717;
     color: white;
     position: relative;
+<<<<<<< HEAD
     padding: 5px; /* Añadir espaciado para mejorar la apariencia */
+=======
+    padding: 5px 10px; /* Añadir espaciado para mejorar la apariencia */
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
     height: auto; /* Establecer la altura deseada */
 }
 
@@ -694,6 +698,7 @@ main {
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -714,6 +719,12 @@ main {
 
 
 
+=======
+.main-lateral a:hover {
+    font-family: 'Roboto', sans-serif;
+    color: #f5793b;
+}
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
 
 
 

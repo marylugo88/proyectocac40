@@ -24,20 +24,31 @@
     </header>
 
     <main class="formulario">
-            <form  class="formulario-usuario">
+            <form  id= "formulario-registro" class="formulario-registro">
                 <h3> Registrate </h3>
+<<<<<<< HEAD
                 <div class="contenedor-formularios">
                     <div class="input-contenedor">
                         <i class="fas fa-user icon"></i>
                         <input type="text" placeholder="Nombre completo">
+=======
+                <div class="contenedor  formulario__grupo" id="grupo__nombre">
+                    <div class="input-contenedor  formulario__grupo-input">
+                        <i class="formulario__validacion-estado fas fa times-circle fas fa-user icon"></i>
+                        <input type="text" class="formulario__input" name="nombre" id="nombre"  placeholder="Nombre completo">
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
                     </div>
-                    <div class="input-contenedor">
-                        <i class="fas fa-envelope icon"></i>
-                        <input type="text" placeholder="Correo electronico">
+                </div>
+                <div class="contenedor  formulario__grupo" id="grupo__correo">
+                    <div class="input-contenedor formulario__grupo-input">
+                        <i class="formulario__validacion-estado fas fa times-circle fas fa-envelope icon"></i>
+                        <input type="email" name="correo" id="correo"  placeholder="Correo electronico">
                     </div>
-                    <div class="input-contenedor">
-                        <i class="fas fa-key icon"></i>
-                        <input type="password" placeholder="Contraseña">
+                </div>
+                <div class="contenedor  formulario__grupo" id="grupo__password">
+                    <div class="input-contenedor formulario__grupo-input">
+                        <i class="formulario__validacion-estado fas fa times-circle fas fa-key icon"></i>
+                        <input type="password" name="contraseña" id="password" placeholder="Contraseña">
                     </div>
                 </div>
                 <div class="button-formularios">

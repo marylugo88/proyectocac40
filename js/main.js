@@ -1,3 +1,4 @@
+
 document.getElementById("header").innerHTML = `        
 <div class="texto-header">
 <h1><a href="index.html"><img src="img/logo.svg" alt="logo"></a> vemos hoy?</h1>
@@ -18,7 +19,10 @@ document.getElementById("header").innerHTML = `
     <li><a href="usuario.html">Usuario</a></li>
     <li><a href="peliculas.html">Películas</a></li>
     <li><a href="series.html">Series</a></li>
+<<<<<<< HEAD
     <li><a href="contacto.html">Contacto</a></li>
+=======
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
 </ul>
 </nav>
 </div>
@@ -38,19 +42,31 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-link">
         <h3>Principal</h3>
         <ul>
+<<<<<<< HEAD
             <li><a href="series.html">Series</a></li>
             <li><a href="peliculas.html">Peliculas</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="https://fast.com/es/" target="_blank">Prueba de velocidad</a></li>
-        </ul>
+=======
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Peliculas</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Prueba de velocidad</a></li>
 
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
+        </ul>
     </div>
 
     <div class="footer-link">
         <h3>Siguenos</h3>
+<<<<<<< HEAD
         <div class="socials">      
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+=======
+        <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=61551870476388"><i class="fa-brands fa-facebook-f"></i></a>
+>>>>>>> f81b6735a0bd26cc07d7a13dbe34fd4f248803c4
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://github.com/marylugo88/proyectocac40" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.python.org/ "target="_blank"><i class="fab fa-python"></i></a>
@@ -72,7 +88,6 @@ document.getElementById("footer").innerHTML = `
 
 </footer>
 `
-
 // selector
 var menu = document.querySelector('.menu-header');
 
@@ -157,4 +172,51 @@ fila.addEventListener('mouseleave', () => {
 peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 }); /*Carrusel*/ 
 
+// validacion del formulario
 
+const formulariou = document.getElementById('formulario-usuario');
+const inputs = document.querySelectorAll('#formulario-usuario input');
+
+const expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    nombre: /^[a-zA-ZÀ-\s]{1,40}$/,
+    password: /^.{4,12}$/,
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$/,
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre');
+        break;
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo');
+        break;
+        case "password":
+            validarCampo(expresiones.password, e.target, 'password');
+        break;
+    }
+}
+
+const validarCampo(expresion, input, campo) => {
+            if(expresion.test(input.value)){
+                document.getElementById(´grupo__${campo}´).classList.remove('formulario__grupo-incorrecto');
+                document.getElementById(´grupo__${campo}´).classList.add('formulario__grupo-correcto');
+                document.querySelector(´grupo__${campo} i´).classList.add('fa-check-circle');
+                document.querySelector(´grupo__${campo} i´).classList.remove('fa-times-circle');
+            } else {
+                
+                document.getElementById(´grupo__${campo}´).classList.remove('formulario__grupo-incorrecto');
+                document.getElementById(´grupo__${campo}´).classList.add('formulario__grupo-correcto');
+                document.querySelector(´grupo__${campo} i´).classList.add('fa-check-circle');
+                document.querySelector(´grupo__${campo} i´).classList.remove('fa-times-circle');
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarformulario);
+});
+
+formulariou.addEventListener('submit', (e) =>{
+    e.preventDefault();
+});
