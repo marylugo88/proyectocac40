@@ -50,8 +50,8 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-link">
         <h3>Siguenos</h3>
         <div class="socials">      
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61551870476388"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/quevemoshoyok"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://github.com/marylugo88/proyectocac40" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.python.org/ "target="_blank"><i class="fab fa-python"></i></a>
         </div>
