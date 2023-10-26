@@ -25,7 +25,7 @@ header {
     background-color: #171717;
     color: white;
     position: relative;
-    padding: 5px 10px; /* Añadir espaciado para mejorar la apariencia */
+    padding: 5px; /* Añadir espaciado para mejorar la apariencia */
     height: auto; /* Establecer la altura deseada */
 }
 
@@ -135,7 +135,7 @@ main {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9));
 }
 
-.swiper-slide .image .black h1 {
+.swiper-slide .image .black h2 {
     font-size: 30px;
     text-align: left;
     position:fixed;
@@ -694,6 +694,37 @@ main {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Banner Saw X*/
 .pelicula-principal {
 	font-size: 16px;
@@ -739,6 +770,7 @@ main {
     
 }
 
+
 .pelicula-principal .boton:hover {
 	background: #fff;
 	color: #000;
@@ -747,8 +779,6 @@ main {
 .pelicula-principal .boton i {
 	margin-right: 1.25em;
 }
-
-
 
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
 .contenedor-titulo-controles {
