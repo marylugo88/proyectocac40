@@ -694,37 +694,6 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Banner Saw X*/
 .pelicula-principal {
 	font-size: 16px;
@@ -770,6 +739,16 @@ main {
     
 }
 
+.pelicula-principal a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.pelicula-principal a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
 .pelicula-principal .boton:hover {
 	background: #fff;
 	color: #000;
@@ -778,6 +757,8 @@ main {
 .pelicula-principal .boton i {
 	margin-right: 1.25em;
 }
+
+
 
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
 .contenedor-titulo-controles {
