@@ -1211,7 +1211,7 @@ p {
 
 
 .footer-link a:hover {
-    color: #00c3ff;
+    color: #000000;
 }
 
 .footer .socials {
@@ -1233,7 +1233,7 @@ p {
 }
 
 .footer .socials a:hover {
-    background-color: #00c3ff;
+    background-color: #000000;
 }
 
 .footer form {
