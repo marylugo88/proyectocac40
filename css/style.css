@@ -101,6 +101,30 @@ main {
     
 }
 
+table {
+    width: 100%;
+    margin: 0 auto; /* Esto centrará la tabla horizontalmente */
+    height: 500px;
+}
+
+table h2 {
+    font-size: 30px;
+    top: 50%;
+    left: 5%;
+    color: #fff;
+}
+
+td {
+    text-align: center; /* Esto centrará el contenido de las celdas */
+}
+
+iframe {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+
 
 .section-series {
     width: 100%;
