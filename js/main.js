@@ -38,22 +38,23 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-link">
         <h3>Principal</h3>
         <ul>
-            <li><a href="series.html">Series</a></li>
-            <li><a href="peliculas.html">Peliculas</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://fast.com/es/" target="_blank">Prueba de velocidad</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Peliculas</a></li>
+            <li><a href="#">Recitales</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Prueba de velocidad</a></li>
+
         </ul>
 
     </div>
 
     <div class="footer-link">
         <h3>Siguenos</h3>
-        <div class="socials">      
-            <a href="https://www.facebook.com/profile.php?id=61551870476388"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/quevemoshoyok"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/marylugo88/proyectocac40" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.python.org/ "target="_blank"><i class="fab fa-python"></i></a>
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
         </div>
         <h3><a href="contacto.html">Contacto</a></h3>
 
@@ -73,14 +74,44 @@ document.getElementById("footer").innerHTML = `
 </footer>
 `
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('miFormulario').addEventListener('submit', function (event) {
+    // Obtener los valores de los campos
+    var nombre = document.getElementById('nombre').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var mensaje = document.getElementById('mensaje').value.trim();
+
+    // Validación del campo de nombre
+    if (nombre.length < 3 || nombre.length > 50 || /\d/.test(nombre)) {
+        // La condición /\d/.test(nombre) verifica si hay algún número en el nombre.
+        alert('El campo de nombre debe tener entre 3 y 50 caracteres y no debe contener números.');
+        event.preventDefault();
+    }
+
+    // Validación del campo de email
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingresa una dirección de correo electrónico válida.');
+        event.preventDefault();
+    }
+
+    // Validación del campo de mensaje
+    if (mensaje.length > 200) {
+        alert('El campo de mensaje no puede contener más de 200 caracteres.');
+        event.preventDefault();
+    }
+});
+});
+
+
 // selector
 var menu = document.querySelector('.menu-header');
 
 // method
 function toggleMenu (event) {
-  this.classList.toggle('is-active');
-  document.querySelector( ".menuppal" ).classList.toggle("is_active");
-  event.preventDefault();
+    this.classList.toggle('is-active');
+    document.querySelector( ".menuppal" ).classList.toggle("is_active");
+    event.preventDefault();
 }
 
 // event
@@ -156,5 +187,4 @@ pelicula.addEventListener('mouseenter', (e) => {
 fila.addEventListener('mouseleave', () => {
 peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 }); /*Carrusel*/ 
-
 
