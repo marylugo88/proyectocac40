@@ -1205,7 +1205,7 @@ p {
 .footer-img-link {
     display: flex;
     margin-left: 10px;
-    
+    justify-content: space-around;
 }
 
 .footer-link {
@@ -1310,7 +1310,7 @@ p {
     }
 
     .footer-img-link {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         text-align: center;
     }
@@ -1471,6 +1471,12 @@ p {
         list-style: none;
     }
 
+}
+
+main.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ---- ----- ----- Media Queries Saw X ----- ----- ----- */
