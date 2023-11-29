@@ -1,0 +1,34 @@
+<!-- contacto.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="formulario">
+        <div id="formulario">
+            <form class="formulario-usuario" id="miFormulario" action="https://formspree.io/f/mdorpkwd" method="POST">
+                <h3> Formulario de Contacto </h3>
+                <div class="contenedor-formularios">
+                    <div class="input-contenedor">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="nombre" name="Nombre" placeholder="Nombre completo" autocomplete="off">
+                    </div>
+                    <div class="input-contenedor">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="text" id="email" name="Email" placeholder="Correo electrónico" autocomplete="off">
+                    </div>
+                    <div class="input-contenedor">
+                        <i class="fas fa-comment icon"></i>
+                        <textarea class="form-text" id="mensaje" name="mensaje" placeholder="Esperamos tus comentarios, están permitidos 200 caracteres."></textarea>
+                    </div>
+                </div>
+                <div class="button-formularios">
+                    <input type="submit" id="enviarCorreo" value="Enviar">
+                    <br>
+                    <br>
+                </div>
+                </form>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,253 @@
+    <!-- series.html -->
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+    
+<main class="main-series">
+     <section class="section-series">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Loki</h2>
+                            <p>
+                              Loki es llevado ante la misteriosa organización llamada AVT (Autoridad de Variación Temporal) después de los acontecimientos ocurridos en "Avengers: Endgame (2019)" y se le da a elegir enfrentarse a ser borrado de la existencia debido a que es una "variante de tiempo" o ayudar a arreglar la línea de tiempo y detener una amenaza mayor.
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/KcBStos46EM"><i class="fa-solid fa-play"></i></a>
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Series/LOKI.jpg') }}" alt="SERIES">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Anatomía según Grey</h2>
+                            <p>
+                                La vida de Meredith Grey no es nada fácil. Intenta tomar las riendas de su vida, aunque su trabajo sea de esos que te hacen la vida imposible. Meredith es una cirujana interna de primer año en el Hospital Grace de Seattle, el programa de prácticas más duro de la Facultad de Medicina de Harvard. Un elenco de compañeros de promoción tendrán que superar la misma prueba.
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/VftMccvBNkE"><i class="fa-solid fa-play"></i></a>
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Series/GREY.jpg') }}" alt="SERIES">>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Dr.House</h2>
+                            <p>
+                                Gregory House, el mejor médico del hospital, es un hombre antipático que está especializado en el diagnóstico de enfermedades. Su carácter extravagante, su rebeldía y su honradez con los pacientes y su equipo lo convierten en una persona única. Es además adicto a los calmantes y a las series de hospitales.
+                            </p>
+                            <div class="watch">
+                               <a href="https://youtu.be/MczMB8nU1sY"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Series/DRHOUSE.jpg') }}" alt="SERIES">>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Peaky Blinders</h2>
+                            <p>
+                                En Gran Bretaña, Reino Unido se recuperan de la desesperación de la Gran Guerra, las personas sobreviven a como pueden, y las bandas criminales proliferan en una nación sacudida económicamente. Es justamente aquí donde una familia de gánsteres irlandeses de origen nómada asentada en Birmingham  justo después de la Primera Guerra Mundial.
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/EM12mcTEI88"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Series/peaky.jpg') }}" alt="SERIES">>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Lost</h2>
+                            <p>
+                                La serie narra las vivencias de los pasajeros supervivientes del vuelo 815 de Oceanic Airlines Sydney- Los Ángeles en una isla aparentemente desierta, en la cual ocurren cosas muy extrañas,  con lo que explica las decisiones que estos toman en la isla, el motivo por el cual tomaron ese avión y para mostrar que ellos, sin saberlo, estaban perdidos en sus vidas.
+                            </p>
+                            <div class="watch">
+                               <a href="https://youtu.be/KTu8iDynwNc"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Series/LOST.jpg') }}" alt="SERIES">>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section> 
+
+
+        <!-- Populares -->
+        <div class="second">
+            <div class="latest">
+            <h1>Películas Populares</h1>
+            <div class="box">
+                {% for serie in series_popular %}
+                {% if serie.tipo == 'serie' %}
+                    <div class="card">
+                        <div class="details">
+                            <div class="left">
+                                <p class="name">{{ serie.nombre }}</p>
+                                <div class="date_quality">
+                                    <p class="quality">HD</p>
+                                    <p class="date">{{ serie.ano_lanzamiento }}</p>
+                                </div>
+                                <p class="category">{{ serie.genero }}</p>
+                                <div class="info">
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>{{ serie.duracion }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                               <a href="{{ serie.trailer }}"><i class="fa-solid fa-play"></i></a>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename=serie.miniatura) }}" alt="serie">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    
+    
+        <!-- Tendencias -->
+        <div class="upcoming">
+            <div class="movies_box">
+                <h1>Tendencias</h1>
+                <div class="box">
+                    {% for serie in series_tendencia %}
+                    {% if serie.tipo == 'serie' %}
+                    <div class="card">
+                        <div class="details">
+                            <div class="left">
+                                <p class="name">{{ serie.nombre }}</p>
+                                <div class="date_quality">
+                                    <p class="quality">HD</p>
+                                    <p class="date">{{ serie.ano_lanzamiento }}</p>
+                                </div>
+                                <p class="category">{{ serie.genero }}</p>
+                                <div class="info">
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>{{ serie.duracion }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <a href="{{ serie.trailer }}"><i class="fa-solid fa-play"></i></a>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename=serie.miniatura) }}" alt="serie">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    
+    <!--Ultimas Agregadas-->
+        <div class="show">
+            <div class="tv_show">
+                <h1>Ultimas Agregadas</h1>
+                <div class="box">
+                    {% for serie in ultimas_agregadas %}
+                    {% if serie.tipo == 'serie' %}
+                        <div class="card">
+                            <div class="details">
+                                <div class="left">
+                                    <p class="name">{{ serie.nombre }}</p>
+                                    <div class="date_quality">
+                                        <p class="quality">HD</p>
+                                        <p class="date">{{ serie.ano_lanzamiento }}</p>
+                                    </div>
+                                    <p class="category">{{ serie.genero }}</p>
+                                    <div class="info">
+                                        <div class="time">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <p>{{ serie.duracion }}min</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <a href="{{ serie.trailer }}"><i class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename=serie.miniatura) }}" alt="serie">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    <!-- <h3>Series</h3>
+    <table class="series-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Año de Lanzamiento</th>
+                <th>Descripción</th>
+                <th>Género</th>
+                <th>Duración</th>
+                <th>Trailer</th>
+                <th>Plataforma</th>
+                <th>Miniatura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for serie in series %}
+                {% if serie.tipo == 'serie' %}
+                    <tr>
+                        <td>{{ serie.id }}</td>
+                        <td>{{ serie.nombre }}</td>
+                        <td>{{ serie.ano_lanzamiento }}</td>
+                        <td>{{ serie.descripcion }}</td>
+                        <td>{{ serie.genero }}</td>
+                        <td>{{ serie.duracion }}</td>
+                        <td>{{ serie.trailer }}</td>
+                        <td>{{ serie.plataforma }}</td>
+                        <td>{{ serie.miniatura }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table> -->
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <!-- <script src="static/js/series.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/series.js') }}"></script> -->
+
+
+
+
+
+
+
+   
+</main>
+
+
+{% endblock %}

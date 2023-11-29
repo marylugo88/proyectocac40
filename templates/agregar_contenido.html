@@ -1,0 +1,64 @@
+<!-- agregar_contenido.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="formulario">
+        <form class="formulario-usuario" method="post" action="{{ url_for('agregar_contenido') }}">
+            <h3>Agregar Contenido</h3>
+            <div class="contenedor-formularios">
+                <div class="input-contenedor">
+                    <label for="tipo_contenido">Tipo de Contenido:</label>
+                    <select name="tipo_contenido" required>
+                        <option value="pelicula">Película</option>
+                        <option value="serie">Serie</option>
+                    </select><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" required><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="ano_lanzamiento">Año de lanzamiento:</label>
+                    <input type="number" name="ano_lanzamiento" required><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea name="descripcion" required></textarea><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="genero">Género:</label>
+                    <input type="text" name="genero"><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="duracion">Duración:</label>
+                    <input type="text" name="duracion"><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="trailer">Trailer:</label>
+                    <input type="text" name="trailer"><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="plataforma">Plataforma:</label>
+                    <input type="text" name="plataforma"><br>
+                </div>
+
+                <div class="input-contenedor">
+                    <label for="miniatura">Miniatura URL:</label>
+                    <input type="text" name="miniatura"><br>
+                </div>
+
+                <div class="button-formularios">
+                    <input type="submit" value="Agregar Contenido">
+                </div>
+            </div>
+        </form>
+    </main>
+{% endblock %}

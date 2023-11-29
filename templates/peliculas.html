@@ -1,0 +1,265 @@
+<!-- peliculas.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="main-series">
+        <section class="section-series">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Madagascar</h2>
+                            <p>
+                                Cuatro divertidos animales del zoo de Central Park, Nueva York, (Alex el león, Marty la cebra, Gloria la hipopótamo y Melman la jirafa). Llevan toda su vida encerrados en cautiverio sin poder experiemtnar el sabor de la libertad y se han propuesto idear un plan para salir de allí juntos. Un día, una serie de casualidades les llevan a lograr lo que tanto ansiaban y huyen de aquel lugar. 
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/dm-eiFVtRws"><i class="fa-solid fa-play"></i></a>
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Peliculas/MADAGASCAR.jpg') }}" alt="PELICULA">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Harry Potter y el cáliz de fuego</h2>
+                            <p>
+                                La cuarta parte de la serie del niño mago comienza con la Copa Internacional de Quidditch. Cuenta también el inicio de la atracción por Cho Chang y otro año de magia, en el que una gran sorpresa obligará a Harry a enfrentarse a muchos desafíos temibles. También habrá un torneo de magia para tres escuelas, y el temido regreso de «Aquel-que-no-debe-ser-nombrado».
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/wX5dWfUKGPg"><i class="fa-solid fa-play"></i></a>
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Peliculas/HARRY.jpg') }}" alt="PELICULA">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Historias cruzadas</h2>
+                            <p>
+                                Mississippi, años 60. Skeeter es una joven sureña que regresa de la universidad decidida a convertirse en escritora. Su llegada altera la vida de la ciudad e incluso la de sus amigos porque se ha propuesto entrevistar a las mujeres negras que se han pasado la vida al servicio de las grandes familias sufriendo todas las formas de discriminación racial.
+                            </p>
+                            <div class="watch">
+                               <a href="https://youtu.be/3eajzW3XW7Q"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Peliculas/HISTORIAS.jpg') }}" alt="PELICULA">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Sin novedad en el frente </h2>
+                            <p>
+                                Relato de las terribles experiencias y la angustia de un joven soldado alemán en el frente occidental durante la Primera Guerra Mundial. <br>Cuando Paul, de 17 años, se une al frente occidental en la Primera Guerra Mundial, su entusiasmo se derrumba rápidamente ante la dura realidad de la vida en las trincheras.
+                            </p>
+                            <div class="watch">
+                                <a href="https://youtu.be/EBk1lXQ7rcY"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Peliculas/SINNOVEDAD.jpg') }}" alt="PELICULA">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <div class="black">
+                            <h2>Monsters University</h2>
+                            <p>
+                                Mike y Sulley son dos jóvenes monstruos que acuden a la universidad para estudiar la carrera de asustadores. Ahora son amigos íntimos y se llevan muy bien, pero no fue siempre así. <br>Durante sus años de universidad, debieron aprender a dejar sus diferencias de lado y a trabajar en equipo.
+                            </p>
+                            <div class="watch">
+                               <a href="https://youtu.be/xBzPioph8CI"><i class="fa-solid fa-play"></i></a> 
+                                <p>Ver trailer</p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/Peliculas/MONSTER.jpg') }}" alt="PELICULA">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section> 
+
+    <div class="second">
+        <div class="latest">
+    <h1>Recomendaciones de la web</h1>
+
+    <div class="movies"></div>
+
+</div></div>
+
+
+    <!-- Populares -->
+    <div class="second">
+        <div class="latest">
+        <h1>Películas Populares</h1>
+        <div class="box">
+            {% for pelicula in peliculas_popular %}
+            {% if pelicula.tipo == 'pelicula' %}
+                <div class="card">
+                    <div class="details">
+                        <div class="left">
+                            <p class="name">{{ pelicula.nombre }}</p>
+                            <div class="date_quality">
+                                <p class="quality">HD</p>
+                                <p class="date">{{ pelicula.ano_lanzamiento }}</p>
+                            </div>
+                            <p class="category">{{ pelicula.genero }}</p>
+                            <div class="info">
+                                <div class="time">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <p>{{ pelicula.duracion }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                           <a href="{{ pelicula.trailer }}"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename=pelicula.miniatura) }}" alt="PELICULA">
+                </div>
+                {% endif %}
+                {% endfor %}
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Tendencias -->
+    <div class="upcoming">
+        <div class="movies_box">
+            <h1>Tendencias</h1>
+            <div class="box">
+                {% for pelicula in peliculas_tendencia %}
+                {% if pelicula.tipo == 'pelicula' %}
+                <div class="card">
+                    <div class="details">
+                        <div class="left">
+                            <p class="name">{{ pelicula.nombre }}</p>
+                            <div class="date_quality">
+                                <p class="quality">HD</p>
+                                <p class="date">{{ pelicula.ano_lanzamiento }}</p>
+                            </div>
+                            <p class="category">{{ pelicula.genero }}</p>
+                            <div class="info">
+                                <div class="time">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <p>{{ pelicula.duracion }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <a href="{{ pelicula.trailer }}"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename=pelicula.miniatura) }}" alt="PELICULA">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+<!--Ultimas Agregadas-->
+    <div class="show">
+        <div class="tv_show">
+            <h1>Ultimas Agregadas</h1>
+            <div class="box">
+                {% for pelicula in ultimas_agregadas %}
+                {% if pelicula.tipo == 'pelicula' %}
+                    <div class="card">
+                        <div class="details">
+                            <div class="left">
+                                <p class="name">{{ pelicula.nombre }}</p>
+                                <div class="date_quality">
+                                    <p class="quality">HD</p>
+                                    <p class="date">{{ pelicula.ano_lanzamiento }}</p>
+                                </div>
+                                <p class="category">{{ pelicula.genero }}</p>
+                                <div class="info">
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>{{ pelicula.duracion }}min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <a href="{{ pelicula.trailer }}"><i class="fa-solid fa-play"></i></a>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename=pelicula.miniatura) }}" alt="PELICULA">
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+<div class="container">
+    <h2>Contenido</h2>
+
+    <!-- <h3>Películas</h3>
+    <table class="peliculas-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Año de Lanzamiento</th>
+                <th>Descripción</th>
+                <th>Género</th>
+                <th>Duración</th>
+                <th>Trailer</th>
+                <th>Plataforma</th>
+                <th>Miniatura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pelicula in peliculas %}
+                {% if pelicula.tipo == 'pelicula' %}
+                    <tr>
+                        <td>{{ pelicula.id }}</td>
+                        <td>{{ pelicula.nombre }}</td>
+                        <td>{{ pelicula.ano_lanzamiento }}</td>
+                        <td>{{ pelicula.descripcion }}</td>
+                        <td>{{ pelicula.genero }}</td>
+                        <td>{{ pelicula.duracion }}</td>
+                        <td>{{ pelicula.trailer }}</td>
+                        <td>{{ pelicula.plataforma }}</td>
+                        <td>{{ pelicula.miniatura }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table> -->
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <!-- <script src="js/series.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/series.js') }}"></script> -->
+
+</main>
+
+<!-- <script src="js/pelis.js"></script> -->
+<script src="{{ url_for('static', filename='js/pelis.js') }}"></script> 
+
+
+{% endblock %}

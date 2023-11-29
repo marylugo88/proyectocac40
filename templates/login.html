@@ -1,0 +1,26 @@
+<!-- login.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="formulario">
+        <form class="formulario-usuario">
+            <h3> Iniciar Sesion </h3>
+            <div class="contenedor-formularios">
+                    <div class="input-contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="text" placeholder="Correo electronico">
+                </div>
+                    <div class="input-contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="button-formularios">
+                <input type="submit" value="Iniciar Sesion" >
+            </div>
+                <p>Al registrarte, aceptas nuestras Condiciones de uso y Politicas de privacidad.</p>
+                <p>¿No tienes una cuenta?<a class="link" href="usuario.html">Crear cuenta</a></p>        
+        </form>
+    </main>
+{% endblock %}

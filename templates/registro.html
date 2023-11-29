@@ -1,0 +1,30 @@
+<!-- registro.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="formulario">
+        <form class="formulario-usuario" method="post" action="{{ url_for('registro') }}">
+            <h3> Registrate </h3>
+            <div class="contenedor-formularios">
+                <div class="input-contenedor">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="input-contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" name="contrasena" placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="button-formularios">
+                <input type="submit" value="Registrarse">
+            </div>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
+            <p>¿Ya tienes una cuenta? <a class="link" href="/login">Iniciar Sesión</a></p>
+        </form>
+    </main>
+{% endblock %}

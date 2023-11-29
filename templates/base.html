@@ -1,0 +1,126 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/qvh_circulo.png') }}">
+    <title>{% block title %}Q vemos hoy?{% endblock %}</title>
+
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <div class="texto-header">
+                <h1><a href="/"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="logo"></a> vemos hoy?</h1>
+                </div>
+                <div class="buscar-header">
+                <input type="text" class="buscar-header" name="searchInput" placeholder="Buscar...">
+                </div>
+                
+                <div class="menu-header">
+                <div class="_layer -top"></div>
+                <div class="_layer -mid"></div>
+                <div class="_layer -bottom"></div>
+                </div>
+                
+                <nav class="menuppal">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('registro') }}">Registro</a></li>
+                        <!-- <li><a href="{{ url_for('usuarios') }}">Usuarios</a></li> -->
+                        <li><a href="{{ url_for('peliculas') }}">Películas</a></li>
+                        <li><a href="{{ url_for('series') }}">Series</a></li>
+                        <!-- <li><a href="{{ url_for('agregar_contenido') }}">Agregar Contenido</a></li> -->
+                        <!-- <li><a href="{{ url_for('contenido') }}">Contenido</a></li> -->
+                        <!-- <li><a href="{{ url_for('editar_contenido') }}">Editar Contenido</a></li> -->
+                        <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                    </ul>
+                </nav>
+            
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container-footer">
+        <div class="footer-img-link">
+            <div class="footer-link">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="logo">
+                </div>
+            </div>
+            <div class="footer-link">
+                <h3>Principal</h3>
+                <ul>
+                    <li><a href="{{ url_for('series') }}">Series</a></li>
+                    <li><a href="{{ url_for('peliculas') }}">Peliculas</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                    <li><a href="{{ url_for('admin') }}" target="_blank">Administración</a></li>
+                </ul>
+            </div>
+            <div class="footer-link">
+                <h3>Siguenos</h3>
+                <div class="socials">      
+                    <a href="https://www.facebook.com/profile.php?id=61551870476388"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/quevemoshoyok"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/marylugo88/proyectocac40" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.python.org/ "target="_blank"><i class="fab fa-python"></i></a>
+                </div>
+                <h3><a href="contacto.html">Contacto</a></h3>
+            </div>        
+        </div>
+        
+        <hr>
+        <div class="footer-text">
+            <p>Politica de privacidad</p>
+            <p>©Todos los derechos reservados</p>
+        </div>
+        </div>
+    </footer>
+
+    <nav class="navMobile">
+        <div>
+            <a href="/"><i class="fa-solid fa-house-chimney fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href=""><i class="fa-solid fa-magnifying-glass fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="/peliculas"><i class="fa-solid fa-ticket fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="/series"><i class="fa-solid fa-clapperboard fa-2xs"></i></a>
+        </div>
+        <div>
+            <a href="/registro"><i class="fa-solid fa-user fa-2xs"></i></a>
+        </div>
+    </nav>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+</body>
+
+</html>

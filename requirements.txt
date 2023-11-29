@@ -1,0 +1,4 @@
+Flask
+db-sqlite3
+Flask-Migrate
+Flask-SQLAlchemy
