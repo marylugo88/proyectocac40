@@ -1,80 +1,85 @@
 <!-- editar_contenido.html -->
 
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 
-{% block content %}
-    <div class="container">
-        <h2>Editar Contenido</h2>
+{% block admin %}
+<div class="formulario-usuario">
+    <h2>Editar Contenido</h2>
 
-        <form method="post" action="{{ url_for('cargar_contenido') }}">
+    <form  method="post" action="{{ url_for('cargar_contenido') }}">
+        <div class="input-contenedor">
+            <label for="contenido_id">Selecciona Contenido:</label>
+            <select name="contenido_id" required>
+                {% for item in opciones_contenidos %}
+                    <option value="{{ item.id }}" {% if contenido and contenido.id == item.id %}selected{% endif %}>
+                        {{ item.nombre }} - {{ item.tipo.capitalize() }}
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Cargar Contenido">
+        </div>
+    </form>
+
+    {% if contenido %}
+    <div class="contenedor-formularios">
+        <form  method="post" action="{{ url_for('guardar_cambios', id=contenido.id) }}">
+
             <div class="input-contenedor">
-                <label for="contenido_id">Selecciona Contenido:</label>
-                <select name="contenido_id" required>
-                    {% for item in opciones_contenidos %}
-                        <option value="{{ item.id }}" {% if contenido and contenido.id == item.id %}selected{% endif %}>
-                            {{ item.nombre }} - {{ item.tipo.capitalize() }}
-                        </option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Cargar Contenido">
+                <label for="ano_lanzamiento">Año de Lanzamiento:</label>
+                <input type="number" name="ano_lanzamiento" value="{{ contenido.ano_lanzamiento }}" required><br>
             </div>
+
+            <div class="input-contenedor">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" required>{{ contenido.descripcion }}</textarea><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="genero">Género:</label>
+                <input type="text" name="genero" value="{{ contenido.genero }}"><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="duracion">Duración:</label>
+                <input type="text" name="duracion" value="{{ contenido.duracion }}"><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="trailer">Trailer:</label>
+                <input type="text" name="trailer" value="{{ contenido.trailer }}"><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="plataforma">Plataforma:</label>
+                <input type="text" name="plataforma" value="{{ contenido.plataforma }}"><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="miniatura">Miniatura:</label>
+                <input type="text" name="miniatura" value="{{ contenido.miniatura }}"><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="popular">Popular:</label>
+                <input type="checkbox" name="popular" {% if contenido.popular %}checked{% endif %}><br>
+            </div>
+
+            <div class="input-contenedor">
+                <label for="tendencia">Tendencia:</label>
+                <input type="checkbox" name="tendencia" {% if contenido.tendencia %}checked{% endif %}><br>
+            </div>
+
+            <input class="cambios" type="submit" value="Guardar Cambios">
         </form>
 
-        {% if contenido %}
-            <form method="post" action="{{ url_for('guardar_cambios', id=contenido.id) }}">
-                <div class="contenedor-formularios">
-                    <div class="input-contenedor">
-                        <label for="ano_lanzamiento">Año de Lanzamiento:</label>
-                        <input type="number" name="ano_lanzamiento" value="{{ contenido.ano_lanzamiento }}" required><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" required>{{ contenido.descripcion }}</textarea><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="genero">Género:</label>
-                        <input type="text" name="genero" value="{{ contenido.genero }}"><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="duracion">Duración:</label>
-                        <input type="text" name="duracion" value="{{ contenido.duracion }}"><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="trailer">Trailer:</label>
-                        <input type="text" name="trailer" value="{{ contenido.trailer }}"><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="plataforma">Plataforma:</label>
-                        <input type="text" name="plataforma" value="{{ contenido.plataforma }}"><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="miniatura">Miniatura:</label>
-                        <input type="text" name="miniatura" value="{{ contenido.miniatura }}"><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="popular">Popular:</label>
-                        <input type="checkbox" name="popular" {% if contenido.popular %}checked{% endif %}><br>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <label for="tendencia">Tendencia:</label>
-                        <input type="checkbox" name="tendencia" {% if contenido.tendencia %}checked{% endif %}><br>
-                    </div>
-
-                    <input type="submit" value="Guardar Cambios">
-                </div>
-            </form>
-
-            <form method="post" action="{{ url_for('eliminar_contenido', id=contenido.id) }}" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este contenido?');">
-                <input type="submit" value="Eliminar Contenido" class="btn-danger">
-            </form>
-        {% endif %}
+        <form method="post" action="{{ url_for('eliminar_contenido', id=contenido.id) }}" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este contenido?');">
+            <input  type="submit" value="Eliminar Contenido" class="cambios btn-danger">
+        </form>
     </div>
+    {% endif %}
+</div>
 {% endblock %}
+
+
+
+
