@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="show">
+        <div class="tv_show">
+            <h1>Resultados de la Búsqueda</h1>
+            <table>
+                <tbody>
+                    {% if mensaje %}
+                        <tr>
+                            <td colspan="10">{{ mensaje }}</td>
+                        </tr>
+                    {% else %}
+                        {% for resultado in resultados %}
+                            <tr>
+                                <td>
+                                    <div class="box">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename=resultado.miniatura) }}" alt="CONTENIDO">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="box">
+                                        <div class="card-text">
+                                            <p><strong>Nombre:</strong> {{ resultado.nombre }}</p>
+                                            <p><strong>Tipo:</strong> {{ resultado.tipo.capitalize() }}</p>
+                                            <p><strong>Año de Lanzamiento:</strong> {{ resultado.ano_lanzamiento }}</p>
+                                            <p><strong>Descripción:</strong> {{ resultado.descripcion }}</p>
+                                            <p><strong>Género:</strong> {{ resultado.genero }}</p>
+                                            <p><strong>Duración:</strong> {{ resultado.duracion }}</p>
+                                            <p><strong>Trailer:</strong> <a href="{{ resultado.trailer }}">Ver Trailer</a></p>
+                                            <p><strong>Plataforma:</strong> {{ resultado.plataforma }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
