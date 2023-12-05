@@ -1,9 +1,9 @@
 <!-- agregar_contenido.html -->
 
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 
-{% block content %}
-    <main class="formulario">
+{% block admin %}
+
         <form class="formulario-usuario" method="post" action="{{ url_for('agregar_contenido') }}">
             <h3>Agregar Contenido</h3>
             <div class="contenedor-formularios">
@@ -60,5 +60,4 @@
                 </div>
             </div>
         </form>
-    </main>
 {% endblock %}
