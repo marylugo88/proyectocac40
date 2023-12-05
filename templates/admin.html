@@ -1,24 +1,24 @@
-<!-- contenido.html -->
+<!-- admin.html -->
 
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        <h1>Administración</h1>
+    <div class="container-admin">
+        <h1 class="tituloAdmin">Administración</h1>
 
-        <h3>s0Y 3L hACK3R</h3>
-
-        <ul>
+        <ul class="menuAdmin">
             <!-- <li><a href="{{ url_for('index') }}">Home</a></li> -->
             <!-- <li><a href="{{ url_for('registro') }}">Registro</a></li> -->
-            <li><a href="{{ url_for('usuarios') }}" target="_blank">Usuarios</a></li>
+            <li><a href="{{ url_for('usuarios') }}">Usuarios</a></li>
             <!-- <li><a href="{{ url_for('peliculas') }}">Películas</a></li> -->
             <!-- <li><a href="{{ url_for('series') }}">Series</a></li> -->
-            <li><a href="{{ url_for('agregar_contenido') }}" target="_blank">Agregar Contenido</a></li>
-            <li><a href="{{ url_for('contenido') }}" target="_blank">Contenido</a></li>
-            <li><a href="{{ url_for('editar_contenido') }}" target="_blank">Editar Contenido</a></li>
+            <li><a href="{{ url_for('agregar_contenido') }}">Agregar Contenido</a></li>
+            <li><a href="{{ url_for('contenido') }}">Contenido</a></li>
+            <li><a href="{{ url_for('editar_contenido') }}">Editar Contenido</a></li>
             <!-- <li><a href="{{ url_for('contacto') }}">Contacto</a></li> -->
         </ul>
 
+        {% block admin %} {% endblock %}
     </div>
+
 {% endblock %}
