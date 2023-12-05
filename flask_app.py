@@ -1,3 +1,4 @@
+# Para uso dentro de PythonAnywhere no toma app.py, por eso la existencia de este archivo
 
 # A very simple Flask Hello World app for you to get started with...
 
