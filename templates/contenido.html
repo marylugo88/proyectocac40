@@ -1,11 +1,11 @@
 <!-- contenido.html -->
 
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 
-{% block content %}
-    <div class="container">
-        <h2>Contenido</h2>
+{% block admin %}
 
+        <h2>Contenido disponible</h2>
+    <div class="formulario-contenido">
         <h3>Películas</h3>
         <table class="peliculas-table">
             <thead>
@@ -20,7 +20,9 @@
                     <th>Plataforma</th>
                     <th>Miniatura</th>
                 </tr>
+                <br>
             </thead>
+            <br>
             <tbody>
                 {% for pelicula in peliculas %}
                     {% if pelicula.tipo == 'pelicula' %}
