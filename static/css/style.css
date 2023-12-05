@@ -74,6 +74,7 @@ main {
 
 .main-series {
     display: inline;
+    width: 100%;
 }
 
 
@@ -98,7 +99,7 @@ main {
     display: grid;
     grid-template-columns: repeat(1, 1fr); /* 2 columnas */
     gap: 20px; /* Espacio entre las cajas */
-    
+
 }
 
 table {
@@ -216,7 +217,7 @@ iframe {
 .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
 }
 
@@ -726,38 +727,6 @@ iframe {
     object-position: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Banner Saw X*/
 .pelicula-principal {
 	font-size: 16px;
@@ -800,7 +769,7 @@ iframe {
 	cursor: pointer;
 	transition: .3s ease all;
 	font-size: 1.12em;
-    
+
 }
 
 
@@ -898,7 +867,7 @@ iframe {
     min-width: 20%; /*tamaño de imagenes*/
 	transition: .1s ease all;
 	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
-    
+
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
@@ -982,11 +951,11 @@ p {
 .link {
     text-decoration: none;
     color: #EE9322;
-    font-weight: 600;   
+    font-weight: 600;
 }
 
 .link:hover{
-    color: #e9d147;    
+    color: #e9d147;
 }
 
 
@@ -1124,8 +1093,8 @@ p {
     width: 100%;
 }
 
-.formulario-usuario {
-    padding: 10%;
+.formulario-usuario, .formulario-contenido {
+    padding: 2%;
     background: #000;
     border: 2px solid #fa5922;
 }
@@ -1297,12 +1266,122 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 0 15px 10px 0;
-} 
+}
 
 /* Desmarco todas las cosas version mobile */
 .navMobile{
     display: none;
 }
+
+/* ---------Pagina Administracion------------*/
+.container-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    background-image: url("../img/RapidoFondo.jpg");
+}
+.tituloAdmin{
+display: flex;
+text-align: center;
+color:#EE9322;
+font-size: 40px;
+padding: 8px;
+}
+.menuAdmin{
+    display:flex;
+    flex-direction:row;
+
+}
+.menuAdmin li{
+    font-size: 15px;
+    padding: 8px;
+    color: transparent;
+}
+.menuAdmin li a{
+    color: black;
+    text-decoration: none;
+    border: solid #e9d147;
+    background-color: #EE9322;
+    border-radius: 5px;
+}
+.container-admin h2{
+    text-align: center;
+    color:wheat;
+    padding: 10px;
+    font-size: 30px;
+}
+tbody{
+    text-align: center;
+    color:whitesmoke;
+}
+.container-admin .formulario-usuario{
+    display:flex;
+    flex-direction: column;
+    /* height: 75%; */
+    width: 55%;
+    margin: 15px;
+    padding: 10px;
+    align-items: center;
+}
+.container-admin .formulario-usuario h3{
+    font-size: 25px;
+}
+.container-admin .formulario-usuario input{
+    width: 75%;
+    padding: 0.1%;
+    align-items: center;
+}
+.container-admin .formulario-usuario label{
+    width: 20%;
+}
+.container-admin .formulario-usuario .button-formularios input{
+    margin-left: 20%;
+}
+.container-admin .formulario-usuario .cambios{
+    width: 30%;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    margin:35px;
+    background: #EE9322;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-admin .formulario-usuario .cambios:hover{
+    background: #e9d147;
+}
+.container-admin table{
+    width:90%;
+    font-size: 20px;
+}
+.container-admin table th{
+    font-size: 25px;
+}
+
+
+.card-text {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.card-text p {
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.card-text a {
+    text-align: left;
+}
+
 
 @media(max-width:991px) {
     .movies {
@@ -1404,7 +1483,7 @@ p {
         align-items: center; /* Centrar verticalmente */
         gap: 5px; /* Espacio entre la imagen y el texto */
     }
-    
+
     /* Estilo de la imagen del logo */
     .texto-header img {
         height: 50%; /* Tamaño de la imagen */
@@ -1414,7 +1493,7 @@ p {
     }
     .buscar-header {
     display: none;}
-    
+
     .main-central{
         display: inline;
     }
@@ -1439,7 +1518,7 @@ p {
     }
     ._layer{
         display: none;
-        
+
     }
     .menu-header{
         display: none;
@@ -1502,6 +1581,25 @@ main.formulario {
 	.pelicula-principal .descripcion {
 		max-width: 100%;
 	}
+	  .menuAdmin li{
+        font-size: 12px;
+        padding: 4px;
+    }
+    .container-admin .formulario-usuario{
+        height: 100%;
+        width: 100%;
+        margin: 5px;
+    }
+    .container-admin .formulario-usuario label{
+        width: 30%;
+    }
+    .container-admin table{
+    width:30%;
+    font-size: 8px;
+    }
+    .container-admin table th{
+    font-size: 10px;
+    }
 }
 
 
