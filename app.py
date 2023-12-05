@@ -3,10 +3,11 @@ from werkzeug.utils import redirect
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -30,7 +31,7 @@ class Contenido(db.Model):
     miniatura = db.Column(db.String(200), nullable=True)
     popular = db.Column(db.Boolean, default=False)  # Nuevo campo booleano 'popular'
     tendencia = db.Column(db.Boolean, default=False)  # Nuevo campo booleano 'tendencia'
-    
+
 
 
 class Peliculas(Contenido):
@@ -43,17 +44,14 @@ class Series(Contenido):
         'polymorphic_identity': 'serie',
     }
 
-def obtener_contenido_por_id(contenido_id):
-    contenido = Contenido.query.get(contenido_id)
-    return contenido
+# def obtener_contenido_por_id(contenido_id):
+#     contenido = Contenido.query.get(contenido_id)
+#     return contenido
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/admin')
-def admin():
-    return render_template('admin.html')
 
 @app.route('/iframe-peliculas')
 def iframepeliculas():
@@ -106,10 +104,27 @@ def registro():
 
     return render_template('registro.html')
 
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 @app.route('/usuarios')
 def usuarios():
     usuarios = Usuario.query.all()
     return render_template('usuarios.html', usuarios=usuarios)
+
+
+@app.route('/eliminar_usuario/<int:id>', methods=['POST'])
+def eliminar_usuario(id):
+    usuario = Usuario.query.get(id)
+
+    if usuario:
+        db.session.delete(usuario)
+        db.session.commit()
+
+    return redirect(url_for('usuarios'))
+
 
 @app.route('/agregar_contenido', methods=['GET', 'POST'])
 def agregar_contenido():
@@ -147,8 +162,12 @@ def contenido():
     return render_template('contenido.html', peliculas=peliculas, series=series)
 
 def obtener_opciones_contenidos_desde_db():
-    opciones = Contenido.query.all()
+    # Obtener los contenidos ordenados alfabéticamente por nombre
+    opciones = Contenido.query.order_by(Contenido.nombre).all()
+
+    # Crear una lista de diccionarios con id, nombre y tipo
     opciones_contenidos = [{'id': opcion.id, 'nombre': opcion.nombre, 'tipo': opcion.tipo} for opcion in opciones]
+
     return opciones_contenidos
 
 
@@ -201,6 +220,19 @@ def eliminar_contenido(id):
         db.session.commit()
 
     return redirect(url_for('editar_contenido'))
+
+
+@app.route('/buscar', methods=['GET'])
+def buscar_contenido():
+    mensaje = ""
+    termino_busqueda = request.args.get('searchInput', '')
+
+    resultados = Contenido.query.filter(Contenido.nombre.ilike(f"%{termino_busqueda}%")).all()
+
+    if not resultados:
+        mensaje = "No hemos podido encontrar lo que buscas."
+
+    return render_template('resultados_busqueda.html', resultados=resultados, mensaje=mensaje)
 
 
 
