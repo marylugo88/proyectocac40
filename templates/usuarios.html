@@ -1,9 +1,9 @@
 <!-- lista_usuarios.html -->
 
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 
-{% block content %}
-    <div class="container">
+{% block admin %}
+    <div class="formulario-contenido">
         <h2>Lista de Usuarios Registrados</h2>
         <table class="user-table">
             <thead>
@@ -11,6 +11,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Correo</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,11 @@
                         <td>{{ usuario.id }}</td>
                         <td>{{ usuario.nombre }}</td>
                         <td>{{ usuario.correo }}</td>
+                        <td>
+                            <form method="post" action="{{ url_for('eliminar_usuario', id=usuario.id) }}" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
+                            <input  type="submit" value="Eliminar Usuario" class="cambios btn-danger">
+                            </form>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
